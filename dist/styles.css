@@ -1,0 +1,71 @@
+:root {
+  color-scheme: light;
+  --paper: #f6f6ee;
+  --ink: #17253b;
+  --muted: #4a586b;
+  --blue: #254ebd;
+  --line: #c9cfda;
+  font-family: system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, h3, p, figure, ol { margin: 0; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-underline-offset: .24em; }
+a:focus-visible { outline: 3px solid #a84900; outline-offset: 5px; }
+.shell { width: min(100% - 3rem, 70rem); margin-inline: auto; }
+.top, .footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.top { min-height: 5rem; border-bottom: 1px solid var(--line); }
+.wordmark, nav { display: flex; align-items: center; gap: clamp(.7rem, 3vw, 2rem); }
+.wordmark { gap: .55rem; font-size: 1.1rem; font-weight: 800; text-decoration: none; }
+.wordmark img { border-radius: .65rem; }
+nav { font-size: .93rem; font-weight: 650; }
+.skip { position: absolute; top: .5rem; left: .5rem; background: white; padding: .7rem; transform: translateY(-160%); }
+.skip:focus { transform: none; z-index: 1; }
+.hero { display: grid; grid-template-columns: 1.24fr 1fr; align-items: center; gap: clamp(1.5rem, 5vw, 5rem); padding-block: clamp(3rem, 8vw, 7rem); }
+.eyebrow, figcaption, .tag { font-family: ui-monospace, Consolas, monospace; font-size: .78rem; letter-spacing: .08em; font-weight: 750; }
+.eyebrow { color: var(--blue); }
+h1, h2 { font-weight: 850; letter-spacing: -.065em; line-height: 1; text-wrap: balance; }
+h1 { margin-top: 1rem; font-size: clamp(3rem, 7vw, 6.2rem); }
+h1 em { color: var(--blue); font-style: normal; }
+h2 { margin-top: .85rem; font-size: clamp(2.35rem, 5vw, 4.5rem); }
+h3 { font-size: 1.35rem; line-height: 1.15; }
+.intro, article p, li p { color: var(--muted); line-height: 1.62; }
+.intro { margin-top: 1.4rem; max-width: 34rem; font-size: clamp(1.06rem, 2vw, 1.28rem); }
+.actions, .release-links { display: flex; align-items: center; flex-wrap: wrap; gap: 1.2rem; }
+.actions { margin-top: 2rem; }
+.button {
+  display: inline-flex; align-items: center; justify-content: space-between;
+  gap: .85rem; padding: .83rem 1.05rem; min-height: 2.9rem; border-radius: .5rem;
+  background: var(--blue); color: white; font-weight: 720; text-decoration: none;
+}
+.button:hover { background: #193c9d; }
+.text-link { font-weight: 720; }
+.hero-art {
+  overflow: hidden; border: 1px solid #c4d1e7; border-radius: 1.15rem;
+  background: #fff; box-shadow: 12px 12px 0 #dce7fa;
+}
+figcaption { display: flex; justify-content: space-between; gap: .5rem; padding: 1rem 1.15rem; color: #35496a; border-bottom: 1px solid #d7e0ee; }
+.features { background: #142746; color: white; }
+.feature-inner { display: grid; grid-template-columns: 1fr 1.12fr; gap: 2.5rem; padding-block: clamp(3rem, 7vw, 6rem); }
+.features .eyebrow, li > span { color: #b9ceff; }
+.features ol { padding: 0; list-style: none; }
+.features li { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; padding: 1.15rem 0; border-top: 1px solid #657694; }
+li > span { font: 700 .84rem ui-monospace, Consolas, monospace; padding-top: .3rem; }
+li p { margin-top: .45rem; color: #e0e8f7; }
+.downloads { padding-block: clamp(3rem, 7vw, 6rem); }
+.download-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.75rem; }
+article { display: grid; justify-items: start; grid-template-rows: auto auto 1fr auto; gap: .85rem; padding: clamp(1.2rem, 4vw, 2.15rem); background: white; border: 1px solid var(--line); border-radius: .9rem; }
+article:target { outline: 3px solid var(--blue); outline-offset: 4px; }
+.tag { background: #e4edff; color: #1b4197; padding: .35rem .55rem; border-radius: .25rem; }
+.release-links { margin-top: 1.35rem; font-size: .93rem; color: var(--muted); }
+.footer { padding-block: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; flex-wrap: wrap; }
+@media (max-width: 48rem) {
+  .hero, .feature-inner { grid-template-columns: 1fr; }
+  .hero-art { width: min(100%, 27rem); }
+}
+@media (max-width: 34rem) {
+  .shell { width: calc(100% - 2rem); }
+  .download-grid { grid-template-columns: 1fr; }
+}
